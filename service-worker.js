@@ -1,0 +1,61 @@
+
+const CACHE_NAME = 'patient-motion-app-v1';
+const ASSETS = [
+  "index.html",
+  "style.css",
+  "script.js",
+  "app-data.js",
+  "manifest.webmanifest",
+  "assets/images/01-01.png",
+  "assets/images/01-02.png",
+  "assets/images/01-03.png",
+  "assets/images/01-04.png",
+  "assets/images/01-05.png",
+  "assets/images/01-06.png",
+  "assets/images/02-01.png",
+  "assets/images/02-02.png",
+  "assets/images/02-03.png",
+  "assets/images/02-04.png",
+  "assets/images/03-01.png",
+  "assets/images/03-02.png",
+  "assets/images/03-03.png",
+  "assets/images/03-04.png",
+  "assets/images/04-01.png",
+  "assets/images/04-02.png",
+  "assets/images/04-03.png",
+  "assets/images/04-04.png",
+  "assets/images/04-05.png",
+  "assets/images/04-06.png",
+  "assets/images/05-01.png",
+  "assets/images/05-02.png",
+  "assets/images/05-03.png",
+  "assets/images/05-04.png",
+  "assets/images/06-01.png",
+  "assets/images/06-02.png",
+  "assets/images/06-03.png",
+  "assets/images/06-04.png",
+  "assets/images/07-01.png",
+  "assets/images/07-02.png",
+  "assets/images/07-03.png",
+  "assets/images/07-04.png",
+  "assets/images/08-01.png",
+  "assets/images/08-02.png",
+  "assets/images/08-03.png",
+  "assets/images/08-04.png",
+  "assets/images/09-01.png",
+  "assets/images/09-02.png",
+  "assets/images/09-03.png",
+  "assets/images/09-04.png",
+  "assets/images/09-05.png",
+  "assets/images/10-01.png",
+  "assets/images/10-02.png",
+  "assets/images/10-03.png",
+  "assets/images/10-04.png",
+  "assets/images/10-05.png"
+];
+self.addEventListener('install', event => {
+  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)));
+});
+self.addEventListener('fetch', event => {
+  event.respondWith(caches.match(event.request).then(resp => resp || fetch(event.request)));
+});

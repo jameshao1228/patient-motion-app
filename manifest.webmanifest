@@ -1,0 +1,9 @@
+{
+  "name": "病人日常動作教學",
+  "short_name": "動作教學",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f6f8fb",
+  "theme_color": "#2563eb",
+  "lang": "zh-Hant"
+}

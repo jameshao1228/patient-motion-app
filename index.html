@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#2563eb" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="動作教學" />
+  <title>病人日常動作教學</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section id="homeView" class="view active">
+      <div class="hero">
+        <h1>病人日常動作教學</h1>
+        <p>手機版圖像步驟指引，共10類、46張步驟圖。請依醫師、治療師或照護者指示使用。</p>
+      </div>
+      <div class="toolbar" aria-label="工具列">
+        <input id="searchInput" class="search" type="search" placeholder="搜尋：床上起身、外套、助行器…" />
+        <button id="fontBtn" class="small-btn" type="button">字放大</button>
+      </div>
+      <div class="notice">安全提醒：本APP為輔助教學，不能取代專業醫療建議。若出現疼痛、頭暈、喘、失衡或不舒服，請立即停止並通知照護者或醫療人員。</div>
+      <div id="categoryGrid" class="grid"></div>
+      <div id="emptyState" class="empty">找不到相符分類，請換個關鍵字。</div>
+    </section>
+
+    <section id="detailView" class="view">
+      <div class="detail-top">
+        <button id="backBtn" class="back-btn" type="button">← 返回</button>
+        <div class="detail-title">
+          <h2 id="detailName"></h2>
+          <p id="detailMeta"></p>
+        </div>
+      </div>
+      <div class="progress"><div id="progressBar" class="progress-bar"></div></div>
+      <div class="step-card">
+        <div class="step-head">
+          <span id="stepBadge" class="badge"></span>
+          <span class="zoom-note">點圖片可放大</span>
+        </div>
+        <div class="figure-wrap"><img id="mainImage" src="" alt="" /></div>
+        <div class="nav-row">
+          <button id="prevBtn" class="primary-btn" type="button">上一張</button>
+          <button id="nextBtn" class="primary-btn" type="button">下一張</button>
+        </div>
+      </div>
+      <div class="notes">
+        <h3>操作提醒</h3>
+        <ul id="notesList"></ul>
+      </div>
+      <div id="thumbRow" class="thumb-row" aria-label="步驟縮圖"></div>
+      <div class="all-steps">
+        <h3>全部步驟</h3>
+        <div id="stepList" class="step-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-label="圖片放大檢視">
+    <button id="closeModal" type="button">關閉 ✕</button>
+    <img id="modalImage" src="" alt="放大圖片" />
+  </div>
+
+  <nav class="footer-nav" aria-label="底部快速按鈕">
+    <div class="footer-inner">
+      <button id="homeFooterBtn" class="secondary" type="button">首頁</button>
+      <button id="topFooterBtn" type="button">回到上方</button>
+    </div>
+  </nav>
+  <script src="app-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
